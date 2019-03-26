@@ -1,0 +1,95 @@
+html, body {
+     margin: 0;
+     padding: 0;
+}
+
+body {
+     width: 100%;
+     height: 100vh;
+     background: url(hero.jpg) no-repeat 50% 50%;
+     background-size: cover;
+}
+
+h1 {
+     font-family: Poppins;
+     font-weight: bold;
+     color: #fff;
+     font-size: 42px;
+     text-transform: uppercase;
+     padding: 0.4em 1em;
+     position: absolute;
+     top: 40%;
+     left: 46%;
+     transform: translate(-50%, -50%);
+}
+
+.rev-block {
+     position: absolute;
+}
+
+.rev-block span {
+     opacity: 0;
+     animation: appear-text 0.0001s linear forwards;
+     animation-delay: 1.4s;
+}
+
+.rev-block:after {
+     content: '';
+     top: 0;
+     left: 0;
+     position: absolute;
+     width: 0%;
+     height: 100%;
+     background: #00f0b5;
+     animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+     animation-delay: 1s;
+}
+
+@keyframes rev-block {
+
+     0% {
+          left: 0;
+          width: 0%;
+     }
+     50% {
+          left: 0;
+          width: 100%;
+     }
+     100% {
+          left: 100%;
+          width: 0%;
+     }
+
+}
+
+@keyframes appear-text {
+
+     0% {
+          opacity: 0;
+     }
+     100% {
+          opacity: 1;
+     }
+
+}
+
+#onemore {
+     top: 51%;
+     left: 58%;
+}
+
+#onemore span {
+     animation-delay: 2s;
+}
+
+#onemore.rev-block:after {
+     background: #5e239d;
+     animation-delay: 1.4s;
+}
+
+@media only screen and (max-width: 900px) {
+     h1 {
+          font-size: 20px;
+          padding: 0.4em;
+     }
+}
